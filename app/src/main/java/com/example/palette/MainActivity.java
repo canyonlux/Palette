@@ -1,6 +1,7 @@
 package com.example.palette;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -29,14 +30,21 @@ public class MainActivity extends AppCompatActivity {
         items.add(new Tarjeta(R.drawable.image7));
         items.add(new Tarjeta(R.drawable.image8));
 
+// Configuración del RecyclerView
         RecyclerView recView = findViewById(R.id.recview);
-
         recView.setHasFixedSize(true);
-
-        CardsAdapter adaptador = new CardsAdapter(items);
-        recView.setAdapter(adaptador);
         recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
+        // Configuración del adaptador con el manejador de clics
+        CardsAdapter adaptador = new CardsAdapter(items, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Tarjeta itemSeleccionado = (Tarjeta) view.getTag();
+                ImagePalette.startImagePaletteActivity(MainActivity.this, itemSeleccionado.getImagen());
+            }
+        });
+
+        recView.setAdapter(adaptador);
 
     }
 }
