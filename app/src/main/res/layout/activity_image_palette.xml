@@ -1,17 +1,43 @@
-<!-- activity_image_palette.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ImagePalette">
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/lightVibrantTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter" />
+        android:text="Light Vibrant" />
 
-    <!-- Puedes agregar más elementos según tus necesidades -->
+    <TextView
+        android:id="@+id/mutedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Muted" />
 
+    <TextView
+        android:id="@+id/darkMutedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dark Muted" />
+
+    <TextView
+        android:id="@+id/lightMutedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Light Muted" />
 </LinearLayout>
