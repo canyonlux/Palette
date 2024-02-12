@@ -28,8 +28,6 @@ public class ImagePalette extends AppCompatActivity {
         // Solicita la característica de transiciones de contenido antes de llamar a setContentView
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 
-        // Configura la animación de entrada Fade
-        //Fade fade = new Fade();
         Explode explode= new Explode();
         explode.setDuration(2000); // Duración de la animación en milisegundos
         getWindow().setEnterTransition(explode);
